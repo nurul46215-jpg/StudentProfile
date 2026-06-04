@@ -1,0 +1,217 @@
+/* Reset & Gaya Asas */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #f0b1b7; /* Latar belakang pink pastel yang sangat lembut */
+    padding: 30px 20px;
+    color: #5c4d50; /* Warna teks coklat gelap lembut, bukan hitam pekat */
+}
+
+/* Kotak Header Atas */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px dashed #6d1023; /* Garis putus-putus romantic/aesthetic */
+    padding: 20px 30px;
+    margin-bottom: 40px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(255, 183, 197, 0.2);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #5f1c28;
+    letter-spacing: 1px;
+}
+
+.greeting {
+    font-weight: 600;
+    color: #721324;
+}
+
+/* Susunan Kotak (Mesti Responsive) */
+.dashboard-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 25px;
+    justify-content: center;
+}
+
+/* Gaya Am untuk 3 Kotak Utama */
+.card {
+    background: #ffffff;
+    border: 1px solid #ffe3e7;
+    padding: 30px 25px;
+    border-radius: 20px; /* Bucu lebih bulat (rounded) untuk gaya soft */
+    flex: 1 1 320px; 
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(116, 15, 35, 0.863); /* Shadow lembut tema pink */
+    transition: transform 0.3s ease;
+}
+
+/* Efek timbul yang lembut bila kotak di-hover tetikus */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    color: #831b2e;
+    font-weight: 700;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+/* Garis hiasan comel di bawah tulisan BIODATA / NOTA */
+h2::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #ffb7c5;
+    margin: 8px auto 0 auto;
+    border-radius: 10px;
+}
+
+/* Trik Kesan Gambar Bertindih (Aesthetic Style) */
+.image-stack {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+}
+
+.photo {
+    position: absolute;
+    width: 150px;
+    height: 170px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.04);
+}
+
+.photo-back {
+    background-color: #962332; /* Kad warna pink muda di belakang */
+    border: 2px solid #c0253f;
+    top: 15px;
+    left: 40px;
+    transform: rotate(8deg); 
+    z-index: 1;
+}
+
+.photo-front {
+    background-color: #ffffff;
+    border: 2px solid #af2642;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-placeholder {
+    font-size: 50px;
+    background: #fff5f6;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #6e2a38;
+}
+
+/* Bahagian Biodata */
+.bio-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background: #fff9fa; /* Latar belakang baris biodata yang sangat lembut */
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: 1px solid #8f0e21;
+}
+
+.icon {
+    font-size: 1.3rem;
+    margin-right: 15px;
+}
+
+.text {
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #801525;
+}
+
+/* Bahagian Nota & Kesan Hover (Underline ke Overline) */
+.nota-list {
+    list-style: none; /* Buang titik hitam biasa supaya lebih clean */
+    padding-left: 10px;
+}
+
+.nota-list li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Ganti bullet point biasa dengan emoji bunga sakura 🌸 */
+.nota-list li::before {
+    content: '🌸';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 0.8rem;
+}
+
+.special-link {
+    color: #962a3e;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: underline; 
+    text-underline-offset: 5px; /* Jarakkan sedikit garis bawah dari teks */
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* Logik: bila mouse lalu (hover), buang garis bawah & tukar garis atas (overline) */
+.special-link:hover {
+    text-decoration: none; 
+    border-top: 2px solid #7e1d2e;
+    padding-top: 4px;
+    color: #721f30;
+}
+
+.instruction {
+    margin-top: auto;
+    font-weight: 600;
+    font-style: italic;
+    color: #ff7b94;
+    font-size: 0.85rem;
+    background: #fff5f6;
+    padding: 8px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Responsif untuk skrin phone */
+@media (max-width: 600px) {
+    .main-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
